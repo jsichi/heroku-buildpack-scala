@@ -139,6 +139,7 @@ done
 
   if [ -d $SBT_USER_HOME/.ivy2 ]; then
     echo "-----> Dropping ivy cache from the slug"
+    ls -lR $SBT_USER_HOME/.ivy2
     rm -rf $SBT_USER_HOME/.ivy2
   fi
 
