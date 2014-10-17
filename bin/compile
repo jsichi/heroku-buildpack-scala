@@ -138,9 +138,9 @@ done
 # drop useless directories from slug for play and sbt-native-launcher only
 
   if [ -d $SBT_USER_HOME/.ivy2 ]; then
-    echo "-----> Dropping ivy cache from the slug"
-    ls -lR $SBT_USER_HOME/.ivy2
-    rm -rf $SBT_USER_HOME/.ivy2
+    echo "-----> Selectively dropping ivy cache from the slug"
+    rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-sbt
+    rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-lang/scala-compiler
   fi
 
 # Move compiled app back to where Heroku expects it
