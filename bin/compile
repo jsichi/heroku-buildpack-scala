@@ -139,6 +139,7 @@ done
 
   if [ -d $SBT_USER_HOME/.ivy2 ]; then
     echo "-----> Selectively dropping ivy cache from the slug"
+    rm -rf $SBT_USER_HOME/boot
     rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-sbt
     rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-lang/scala-compiler
   fi
