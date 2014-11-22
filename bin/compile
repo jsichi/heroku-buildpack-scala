@@ -41,6 +41,12 @@ install_java ${BUILD_DIR} ${javaVersion}
 jdk_overlay ${BUILD_DIR}
 echo "done"
 
+# install Compass
+export GEM_HOME=$PWD/gems
+mkdir -p $GEM_HOME
+gem install compass
+PATH=$PATH:$GEM_HOME/bin
+
 # home directory from perspective of SBT; we rename
 # it because otherwise the project root and $HOME
 # are the same, and by default .sbt has a (different)
@@ -78,7 +84,7 @@ SBT_URL="http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-s
 ## in 0.10 start-script will depend on package, if packaging
 ## is required - it may not be, we can run .class files or a package-war
 ## instead.
-SBT_TASKS="compile stage resources:compress-scripts"
+SBT_TASKS="compile stage resources:compress-resources"
 
 # To enable clean compiles, configure the environment to clean:
 # $ heroku config:set SBT_CLEAN=true
