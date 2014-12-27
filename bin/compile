@@ -149,6 +149,7 @@ done
     rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-sbt
     rm -rf $SBT_USER_HOME/.ivy2/cache/org.scala-lang/scala-compiler
     rm -rf $SBT_USER_HOME/.ivy2/cache/org.apache.httpcomponents/httpclient
+    rm -rf $SBT_USER_HOME/.ivy2/cache/org.apache.httpcomponents/httpcore
   fi
 
 # Move compiled app back to where Heroku expects it
